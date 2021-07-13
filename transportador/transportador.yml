@@ -1,8 +1,15 @@
 spring:
   datasource:
-    password: root
-    username: 
-    url: 'jdbc:mysql://localhost:3306/transportador'
+    password: 
+    username: root
+    url: 'jdbc:mysql://localhost:3306/transportador?useTimezone=true;serverTimezone=UTC'
   jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect  
     hibernate:
       ddl-auto: update
+    database: mysql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+    show-sql: true
